@@ -8,7 +8,7 @@ export default function Portafolio() {
     <div>
       <Seo
         title="Portafolio"
-        description="Portafolio de Akriska String Quartet: vídeos e imágenes (placeholders) para mostrar presentaciones en vivo y repertorio para eventos en Costa Rica."
+        description="Portafolio de Akriska String Quartet: vídeos embebidos para mostrar presentaciones en vivo y repertorio para eventos en Costa Rica."
         keywords={[
           'portafolio',
           'videos cuarteto',
@@ -20,7 +20,7 @@ export default function Portafolio() {
           'Akriska String Quartet',
         ]}
         canonicalPath="/portafolio"
-        ogImagePath="/placeholders/og-default.svg"
+        ogImagePath="/media/images/Akriska%20String%20logo.jpg"
       />
 
       <PageHeader
@@ -80,30 +80,6 @@ export default function Portafolio() {
             youtubeUrl={item.youtubeUrl}
           />
         ))}
-      </section>
-
-      <section className="mt-10 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
-        <div className="font-serif text-xl font-semibold">Cómo agregar media</div>
-        <div className="mt-3 grid gap-4 text-sm leading-6 text-[var(--muted)] md:grid-cols-2">
-          <div>
-            <div className="font-semibold text-[var(--text)]">Imágenes</div>
-            <div className="mt-1">
-              Coloca imágenes en <span className="font-mono">/public/media/images</span> y usa rutas como{' '}
-              <span className="font-mono">/media/images/mi-foto.jpg</span>.
-            </div>
-          </div>
-          <div>
-            <div className="font-semibold text-[var(--text)]">Videos</div>
-            <div className="mt-1">
-              Si son archivos locales, colócalos en <span className="font-mono">/public/media/videos</span> y usa{' '}
-              <span className="font-mono">/media/videos/mi-video.mp4</span>. También puedes usar enlaces embebidos (YouTube/Vimeo).
-            </div>
-          </div>
-        </div>
-        <div className="mt-4 text-sm leading-6 text-[var(--muted)]">
-          Mientras el contenido real no esté disponible, el sitio usa placeholders ubicados en{' '}
-          <span className="font-mono">/public/placeholders</span>.
-        </div>
       </section>
     </div>
   )
