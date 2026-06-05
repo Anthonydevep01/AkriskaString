@@ -61,9 +61,6 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="mt-6 text-xs text-[var(--muted)]">
-              Contenido del sitio en español • Diseño mobile-first
-            </div>
           </div>
         </div>
       </section>
