@@ -18,6 +18,10 @@ dist-ssr
 # Local media files (production uses YouTube/CDN)
 public/media/videos/
 
+# Generated at build time
+public/sitemap.xml
+public/robots.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
