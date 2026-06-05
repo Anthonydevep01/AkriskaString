@@ -15,7 +15,7 @@ export default function SiteLayout() {
 
       <div className="mx-auto w-full max-w-[1400px] px-4">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_260px]">
-          <main className="py-8">
+          <main className="min-w-0 py-8">
             <Outlet />
           </main>
 
