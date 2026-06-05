@@ -31,11 +31,11 @@ export default function Home() {
 
       <section className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-soft)]">
         <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative">
+          <div className="relative aspect-[16/10] bg-[var(--bg)] sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:min-h-[320px]">
             <img
               src="/media/images/Akriska%20String%20img01.jpg"
               alt="Akriska String Quartet"
-              className="w-full bg-[var(--bg)] object-contain aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:min-h-[320px]"
+              className="absolute inset-0 h-full w-full object-cover object-center lg:object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
           </div>
