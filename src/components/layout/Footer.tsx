@@ -1,6 +1,7 @@
 import FacebookLogo from '@/components/icons/FacebookLogo'
 import InstagramLogo from '@/components/icons/InstagramLogo'
 import YouTubeLogo from '@/components/icons/YouTubeLogo'
+import { Link } from 'react-router-dom'
 
 const FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61568684376921&sk'
 const INSTAGRAM_URL = 'https://www.instagram.com/akriska_string/'
@@ -60,21 +61,21 @@ export default function Footer() {
           <div>
             <div className="text-sm font-semibold text-[var(--text)]">Secciones</div>
             <div className="mt-3 grid gap-2 text-sm text-[var(--muted)]">
-              <a className="hover:text-[var(--text)]" href="/acerca-de">
+              <Link className="hover:text-[var(--text)]" to="/acerca-de">
                 Acerca de
-              </a>
-              <a className="hover:text-[var(--text)]" href="/vision-mision">
+              </Link>
+              <Link className="hover:text-[var(--text)]" to="/vision-mision">
                 Visión y misión
-              </a>
-              <a className="hover:text-[var(--text)]" href="/portafolio">
+              </Link>
+              <Link className="hover:text-[var(--text)]" to="/portafolio">
                 Portafolio
-              </a>
-              <a className="hover:text-[var(--text)]" href="/testimonios">
+              </Link>
+              <Link className="hover:text-[var(--text)]" to="/testimonios">
                 Testimonios
-              </a>
-              <a className="hover:text-[var(--text)]" href="/blog">
+              </Link>
+              <Link className="hover:text-[var(--text)]" to="/blog">
                 Blog
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -83,9 +84,9 @@ export default function Footer() {
             <div className="mt-3 text-sm text-[var(--muted)]">
               Para contrataciones y consultas:
               <div className="mt-2">
-                <a className="text-[var(--accent)] hover:underline" href="/contacto">
+                <Link className="text-[var(--accent)] hover:underline" to="/contacto">
                   Ir a formulario de contacto
-                </a>
+                </Link>
               </div>
             </div>
           </div>
