@@ -14,7 +14,7 @@ const SITE_NAME = 'Akriska String Quartet'
 const SITE_ORIGIN =
   import.meta.env.VITE_SITE_URL ??
   (typeof window !== 'undefined' ? window.location.origin : 'https://example.com')
-const DEFAULT_OG = '/placeholders/og-default.svg'
+const DEFAULT_OG = '/media/images/Akriska%20String%20logo.jpg'
 
 export default function Seo({
   title,
