@@ -97,7 +97,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Akriska String Quartet. Todos los derechos reservados.
           </div>
           <div>
-            Hecho en Costa Rica • Sitio optimizado para móviles
+            Sitio administrado profesionalmente por{' '}
+            <a
+              href="https://linkcraftmedia.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[var(--accent)] hover:underline"
+            >
+              LinkCraftMedia.com
+            </a>
           </div>
         </div>
       </div>
