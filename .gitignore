@@ -15,6 +15,9 @@ dist-ssr
 # Trae workspace artifacts
 .trae/
 
+# Local media files (production uses YouTube/CDN)
+public/media/videos/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
