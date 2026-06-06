@@ -13,11 +13,12 @@ if (!fs.existsSync(templatePath)) {
   throw new Error('dist/index.html not found. Run vite build first.')
 }
 
-const rawSiteUrl = process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? 'https://example.com'
-const siteUrl = rawSiteUrl.replace(/\/+$/, '')
+const rawSiteUrl =
+  process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? 'https://www.akriskastrings.com'
+const siteUrl = normalizeSiteUrl(rawSiteUrl)
 const siteName = 'Akriska String Quartet'
 const locale = 'es_CR'
-const defaultOgImage = `${siteUrl}/media/images/Akriska%20String%20logo.jpg`
+const defaultOgImage = `${siteUrl}/media/images/akriska-logo.jpg`
 
 const template = fs.readFileSync(templatePath, 'utf8')
 
@@ -103,6 +104,19 @@ const blogPages = blogBlockMatches
   .filter((p) => p.path && p.title && p.description)
 
 const routes = [...staticPages, ...blogPages]
+
+function normalizeSiteUrl(input) {
+  const trimmed = String(input).replace(/\/+$/, '')
+  try {
+    const u = new URL(trimmed)
+    const host = u.hostname
+    const parts = host.split('.')
+    if (!host.startsWith('www.') && parts.length === 2) u.hostname = `www.${host}`
+    return u.toString().replace(/\/+$/, '')
+  } catch {
+    return trimmed
+  }
+}
 
 function buildSeoHead({ path: routePath, title, description }) {
   const fullTitle = `${title} | ${siteName}`

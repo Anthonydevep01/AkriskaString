@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-solid)]">
                 <img
-                  src="/media/images/Akriska%20String%20logo.jpg"
+                  src="/media/images/akriska-logo.jpg"
                   alt="Akriska String Quartet"
                   className="h-full w-full object-cover"
                   loading="lazy"

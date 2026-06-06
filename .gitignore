@@ -15,8 +15,14 @@ dist-ssr
 # Trae workspace artifacts
 .trae/
 
+# Vercel local artifacts
+.vercel/
+
 # Local media files (production uses YouTube/CDN)
 public/media/videos/
+
+# Legacy favicon variant
+public/favicon-v2.svg
 
 # Generated at build time
 public/sitemap.xml

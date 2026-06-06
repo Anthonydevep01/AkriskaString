@@ -11,10 +11,25 @@ type SeoProps = {
 }
 
 const SITE_NAME = 'Akriska String Quartet'
-const SITE_ORIGIN =
+const SITE_ORIGIN = normalizeSiteOrigin(
   import.meta.env.VITE_SITE_URL ??
-  (typeof window !== 'undefined' ? window.location.origin : 'https://example.com')
-const DEFAULT_OG = '/media/images/Akriska%20String%20logo.jpg'
+    (typeof window !== 'undefined'
+      ? window.location.origin
+      : 'https://www.akriskastrings.com'),
+)
+const DEFAULT_OG = '/media/images/akriska-logo.jpg'
+
+function normalizeSiteOrigin(input: string) {
+  try {
+    const u = new URL(input)
+    const host = u.hostname
+    const parts = host.split('.')
+    if (!host.startsWith('www.') && parts.length === 2) u.hostname = `www.${host}`
+    return u.origin
+  } catch {
+    return input
+  }
+}
 
 export default function Seo({
   title,
@@ -33,7 +48,7 @@ export default function Seo({
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_ORIGIN,
-    logo: `${SITE_ORIGIN}/media/images/Akriska%20String%20logo.jpg`,
+    logo: `${SITE_ORIGIN}/media/images/akriska-logo.jpg`,
     sameAs: [
       'https://www.facebook.com/profile.php?id=61568684376921&sk',
       'https://www.instagram.com/akriska_string/',

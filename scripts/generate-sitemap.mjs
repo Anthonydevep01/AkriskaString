@@ -6,8 +6,22 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const projectRoot = path.resolve(__dirname, '..')
 
-const rawSiteUrl = process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? 'https://example.com'
-const siteUrl = rawSiteUrl.replace(/\/+$/, '')
+const rawSiteUrl =
+  process.env.SITE_URL ?? process.env.VITE_SITE_URL ?? 'https://www.akriskastrings.com'
+const siteUrl = normalizeSiteUrl(rawSiteUrl)
+
+function normalizeSiteUrl(input) {
+  const trimmed = String(input).replace(/\/+$/, '')
+  try {
+    const u = new URL(trimmed)
+    const host = u.hostname
+    const parts = host.split('.')
+    if (!host.startsWith('www.') && parts.length === 2) u.hostname = `www.${host}`
+    return u.toString().replace(/\/+$/, '')
+  } catch {
+    return trimmed
+  }
+}
 
 const publicDir = path.join(projectRoot, 'public')
 fs.mkdirSync(publicDir, { recursive: true })

@@ -60,7 +60,7 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
           <Link to="/" className="flex items-center gap-3">
             <div className="h-9 w-9 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface-solid)]">
               <img
-                src="/media/images/Akriska%20String%20logo.jpg"
+                src="/media/images/akriska-logo.jpg"
                 alt="Akriska String Quartet"
                 className="h-full w-full object-cover"
                 loading="eager"
