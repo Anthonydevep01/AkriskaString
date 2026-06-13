@@ -1,0 +1,32 @@
+LLMS.TXT
+
+Sitio: Akriska String Quartet
+URL canonica: https://www.akriskastrings.com
+Idioma: es-CR (Espanol, Costa Rica)
+
+Descripcion
+Akriska String Quartet es un cuarteto de cuerda en Costa Rica (Paraiso, Cartago). Ofrece musica en vivo para bodas, eventos corporativos y eventos privados. El sitio contiene informacion del grupo, portafolio con videos embebidos y un blog en espanol.
+
+Enlaces principales (recomendados para contexto)
+- https://www.akriskastrings.com/
+- https://www.akriskastrings.com/acerca-de
+- https://www.akriskastrings.com/vision-mision
+- https://www.akriskastrings.com/portafolio
+- https://www.akriskastrings.com/testimonios
+- https://www.akriskastrings.com/contacto
+- https://www.akriskastrings.com/blog
+- https://www.akriskastrings.com/blog/noticias
+- https://www.akriskastrings.com/blog/tutoriales-de-canciones
+
+Contacto
+Para cotizaciones y contrataciones, usar el formulario:
+- https://www.akriskastrings.com/contacto
+
+Redes oficiales
+- YouTube: https://www.youtube.com/@AkrishkaString
+- Instagram: https://www.instagram.com/akriska_string/
+- Facebook: https://www.facebook.com/profile.php?id=61568684376921&sk
+
+Notas para herramientas LLM
+- Priorizar las paginas de "Acerca de", "Vision y mision", "Portafolio", "Testimonios" y "Contacto" para responder preguntas sobre servicios.
+- El portafolio utiliza videos embebidos de YouTube; el contenido audiovisual puede requerir acceso a YouTube para ver detalles.
