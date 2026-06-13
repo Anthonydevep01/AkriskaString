@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom'
 import Seo from '@/components/seo/Seo'
 import Button from '@/components/ui/Button'
-import { imageUrl, type LocationProvince } from '@/content/ubicaciones'
+import { type LocationProvince } from '@/content/ubicaciones'
 
 export default function UbicacionTemplate({ province }: { province: LocationProvince }) {
-  const bannerSrc = imageUrl(province.bannerPrompt, 'landscape_16_9')
-
   return (
     <div className="space-y-8">
       <Seo
@@ -20,7 +18,7 @@ export default function UbicacionTemplate({ province }: { province: LocationProv
         <div className="relative">
           <div className="relative aspect-[16/9] bg-[var(--bg)]">
             <img
-              src={bannerSrc}
+              src={province.bannerImagePath}
               alt={`Akriska String Quartet en ${province.name}`}
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"

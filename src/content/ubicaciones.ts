@@ -1,5 +1,3 @@
-export type ImageSize = 'landscape_4_3' | 'landscape_16_9'
-
 export type LocationProvince = {
   slug: string
   name: string
@@ -9,12 +7,8 @@ export type LocationProvince = {
   cantons: string[]
   highlights: string[]
   keywords: string[]
-  bannerPrompt: string
-  cardPrompt: string
-}
-
-export function imageUrl(prompt: string, image_size: ImageSize) {
-  return `https://coreva-normal.trae.ai/api/ide/v1/text_to_image?prompt=${encodeURIComponent(prompt)}&image_size=${image_size}`
+  bannerImagePath: string
+  cardImagePath: string
 }
 
 export const provinces: LocationProvince[] = [
@@ -51,10 +45,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, elegant string quartet with violins performing at a refined venue in San Jose Costa Rica, warm lighting, professional event atmosphere, shallow depth of field, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, close-up violin on stage with soft bokeh lights, San Jose Costa Rica city vibe, professional event ambience, high detail, warm tones',
+    bannerImagePath: '/media/images/Akriska%20String%20banner.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner2.jpg',
   },
   {
     slug: 'alajuela',
@@ -79,10 +71,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, violin and string quartet performing at an outdoor garden wedding venue in Alajuela Costa Rica, golden hour light, elegant decor, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin resting on music stand with soft natural light, Alajuela Costa Rica vibe, elegant event setup, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner2.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner.jpg',
   },
   {
     slug: 'cartago',
@@ -107,10 +97,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, professional string quartet with violins performing in a historic church style venue in Cartago Costa Rica, warm interior lighting, elegant atmosphere, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin detail with subtle architectural background inspired by Cartago Costa Rica, elegant event mood, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner3.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner2.jpg',
   },
   {
     slug: 'heredia',
@@ -135,10 +123,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, string quartet with violins performing at a modern corporate event venue in Heredia Costa Rica, clean elegant lighting, professional atmosphere, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin silhouette with soft city lights bokeh, Heredia Costa Rica mood, elegant professional event, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner3.jpg',
   },
   {
     slug: 'guanacaste',
@@ -163,10 +149,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, elegant string quartet with violins performing at a beach wedding in Guanacaste Costa Rica, sunset light, ocean background, refined decor, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin close-up with soft tropical sunset colors, Guanacaste Costa Rica vibe, elegant wedding atmosphere, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner2.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner3.jpg',
   },
   {
     slug: 'puntarenas',
@@ -191,10 +175,8 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, string quartet with violins performing at a coastal hotel event venue in Puntarenas Costa Rica, evening lights, elegant atmosphere, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin and sheet music with soft ocean bokeh background, Puntarenas Costa Rica mood, elegant event, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner3.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner.jpg',
   },
   {
     slug: 'limon',
@@ -219,9 +201,7 @@ export const provinces: LocationProvince[] = [
       'Akriska String Quartet',
       'Costa Rica',
     ],
-    bannerPrompt:
-      'Realistic photo, elegant string quartet with violins performing at a refined cultural event venue in Limon Costa Rica, warm stage lighting, professional atmosphere, high detail, cinematic',
-    cardPrompt:
-      'Realistic photo, violin detail with subtle tropical greenery bokeh, Limon Costa Rica vibe, elegant event atmosphere, high detail',
+    bannerImagePath: '/media/images/Akriska%20String%20banner.jpg',
+    cardImagePath: '/media/images/Akriska%20String%20banner2.jpg',
   },
 ]

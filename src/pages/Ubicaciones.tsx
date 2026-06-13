@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Seo from '@/components/seo/Seo'
 import PageHeader from '@/components/ui/PageHeader'
-import { imageUrl, provinces } from '@/content/ubicaciones'
+import { provinces } from '@/content/ubicaciones'
 
 export default function Ubicaciones() {
   return (
@@ -36,7 +36,6 @@ export default function Ubicaciones() {
 
       <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {provinces.map((p) => {
-          const cardSrc = imageUrl(p.cardPrompt, 'landscape_4_3')
           return (
             <Link
               key={p.slug}
@@ -45,7 +44,7 @@ export default function Ubicaciones() {
             >
               <div className="relative aspect-[4/3] bg-[var(--bg)]">
                 <img
-                  src={cardSrc}
+                  src={p.cardImagePath}
                   alt={`Cuarteto de cuerda en ${p.name}`}
                   className="absolute inset-0 h-full w-full object-cover"
                   loading="lazy"
