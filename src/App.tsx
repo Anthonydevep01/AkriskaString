@@ -12,6 +12,14 @@ import BlogIndex from '@/pages/BlogIndex'
 import BlogCategory from '@/pages/BlogCategory'
 import BlogPost from '@/pages/BlogPost'
 import Buscar from '@/pages/Buscar'
+import Ubicaciones from '@/pages/Ubicaciones'
+import UbicacionSanJose from '@/pages/UbicacionSanJose'
+import UbicacionAlajuela from '@/pages/UbicacionAlajuela'
+import UbicacionCartago from '@/pages/UbicacionCartago'
+import UbicacionHeredia from '@/pages/UbicacionHeredia'
+import UbicacionGuanacaste from '@/pages/UbicacionGuanacaste'
+import UbicacionPuntarenas from '@/pages/UbicacionPuntarenas'
+import UbicacionLimon from '@/pages/UbicacionLimon'
 import NotFound from '@/pages/NotFound'
 
 export default function App() {
@@ -27,6 +35,14 @@ export default function App() {
             <Route path="/portafolio" element={<Portafolio />} />
             <Route path="/testimonios" element={<Testimonios />} />
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/ubicaciones" element={<Ubicaciones />} />
+            <Route path="/ubicaciones/san-jose" element={<UbicacionSanJose />} />
+            <Route path="/ubicaciones/alajuela" element={<UbicacionAlajuela />} />
+            <Route path="/ubicaciones/cartago" element={<UbicacionCartago />} />
+            <Route path="/ubicaciones/heredia" element={<UbicacionHeredia />} />
+            <Route path="/ubicaciones/guanacaste" element={<UbicacionGuanacaste />} />
+            <Route path="/ubicaciones/puntarenas" element={<UbicacionPuntarenas />} />
+            <Route path="/ubicaciones/limon" element={<UbicacionLimon />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:category" element={<BlogCategory />} />
             <Route path="/blog/:category/:slug" element={<BlogPost />} />

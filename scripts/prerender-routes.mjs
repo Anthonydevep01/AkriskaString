@@ -64,6 +64,54 @@ const staticPages = [
       'Contacto y contratación de Akriska String Quartet en Costa Rica. Solicita cotización para bodas, eventos corporativos y eventos privados.',
   },
   {
+    path: '/ubicaciones',
+    title: 'Ubicaciones',
+    description:
+      'Cobertura por provincias en Costa Rica. Descubre dónde contratar Akriska String Quartet para música en vivo en bodas y eventos.',
+  },
+  {
+    path: '/ubicaciones/san-jose',
+    title: 'Ubicaciones: San José',
+    description:
+      'Música en vivo en San José con cuarteto de cuerda. Servicio para bodas, eventos corporativos y celebraciones privadas en la capital.',
+  },
+  {
+    path: '/ubicaciones/alajuela',
+    title: 'Ubicaciones: Alajuela',
+    description:
+      'Música en vivo en Alajuela con cuarteto de cuerda. Ideal para bodas y eventos en haciendas, hoteles y venues del Valle Central.',
+  },
+  {
+    path: '/ubicaciones/cartago',
+    title: 'Ubicaciones: Cartago',
+    description:
+      'Música en vivo en Cartago con cuarteto de cuerda. Servicio elegante para ceremonias, recepciones y eventos privados en toda la provincia.',
+  },
+  {
+    path: '/ubicaciones/heredia',
+    title: 'Ubicaciones: Heredia',
+    description:
+      'Música en vivo en Heredia con cuarteto de cuerda. Ambientación para bodas, cócteles y eventos corporativos con repertorio clásico y moderno.',
+  },
+  {
+    path: '/ubicaciones/guanacaste',
+    title: 'Ubicaciones: Guanacaste',
+    description:
+      'Música en vivo en Guanacaste con cuarteto de cuerda. Ideal para bodas destino en playa y eventos en hoteles, resorts y venues al aire libre.',
+  },
+  {
+    path: '/ubicaciones/puntarenas',
+    title: 'Ubicaciones: Puntarenas',
+    description:
+      'Música en vivo en Puntarenas con cuarteto de cuerda. Servicio profesional para eventos sociales y corporativos en costa y ciudad.',
+  },
+  {
+    path: '/ubicaciones/limon',
+    title: 'Ubicaciones: Limón',
+    description:
+      'Música en vivo en Limón con cuarteto de cuerda. Servicio para celebraciones, actos culturales y eventos privados con música elegante.',
+  },
+  {
     path: '/blog',
     title: 'Blog',
     description: 'Blog de Akriska String Quartet: noticias y tutoriales de canciones. Artículos en español para Costa Rica.',

@@ -70,6 +70,9 @@ export default function Footer() {
               <Link className="hover:text-[var(--text)]" to="/portafolio">
                 Portafolio
               </Link>
+              <Link className="hover:text-[var(--text)]" to="/ubicaciones">
+                Ubicaciones
+              </Link>
               <Link className="hover:text-[var(--text)]" to="/testimonios">
                 Testimonios
               </Link>

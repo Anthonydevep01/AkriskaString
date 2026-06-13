@@ -76,6 +76,7 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
             <NavItem to="/">Inicio</NavItem>
             <NavItem to="/acerca-de">Acerca de</NavItem>
             <NavItem to="/vision-mision">Visión y misión</NavItem>
+            <NavItem to="/ubicaciones">Ubicaciones</NavItem>
             <NavItem to="/portafolio">Portafolio</NavItem>
             <NavItem to="/testimonios">Testimonios</NavItem>
 
@@ -203,6 +204,12 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
                 to="/portafolio"
               >
                 Portafolio
+              </Link>
+              <Link
+                className="rounded-xl px-3 py-2 text-sm text-[var(--text)] hover:bg-[var(--hover)]"
+                to="/ubicaciones"
+              >
+                Ubicaciones
               </Link>
               <Link
                 className="rounded-xl px-3 py-2 text-sm text-[var(--text)] hover:bg-[var(--hover)]"
