@@ -15,6 +15,11 @@ const blogCategories = [
   { label: 'Tutoriales de canciones', href: '/blog/tutoriales-de-canciones' },
 ]
 
+const moreLinks = [
+  { label: 'Ubicaciones', href: '/ubicaciones' },
+  { label: 'Testimonios', href: '/testimonios' },
+]
+
 function NavItem({
   to,
   children,
@@ -47,10 +52,12 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
   const { theme, toggleTheme } = useTheme()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [blogOpen, setBlogOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
 
   useEffect(() => {
     setMobileOpen(false)
     setBlogOpen(false)
+    setMoreOpen(false)
   }, [location.pathname])
 
   return (
@@ -76,9 +83,7 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
             <NavItem to="/">Inicio</NavItem>
             <NavItem to="/acerca-de">Acerca de</NavItem>
             <NavItem to="/vision-mision">Visión y misión</NavItem>
-            <NavItem to="/ubicaciones">Ubicaciones</NavItem>
             <NavItem to="/portafolio">Portafolio</NavItem>
-            <NavItem to="/testimonios">Testimonios</NavItem>
 
             <div className="relative">
               <button
@@ -119,6 +124,37 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
             </div>
 
             <NavItem to="/contacto">Contacto</NavItem>
+
+            <div className="relative">
+              <button
+                onClick={() => setMoreOpen((v) => !v)}
+                className="inline-flex items-center gap-1 rounded-xl px-3 py-2 text-sm text-[var(--muted)] transition hover:bg-[var(--hover)] hover:text-[var(--text)]"
+                aria-haspopup="menu"
+                aria-expanded={moreOpen}
+              >
+                Ver más
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {moreOpen ? (
+                <div
+                  role="menu"
+                  className="absolute right-0 mt-2 w-64 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface-solid)] shadow-[var(--shadow-soft)]"
+                >
+                  <div className="p-2">
+                    {moreLinks.map((c) => (
+                      <Link
+                        key={c.href}
+                        to={c.href}
+                        className="block rounded-xl px-3 py-2 text-sm text-[var(--muted)] hover:bg-[var(--hover)] hover:text-[var(--text)]"
+                        role="menuitem"
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -205,18 +241,6 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
               >
                 Portafolio
               </Link>
-              <Link
-                className="rounded-xl px-3 py-2 text-sm text-[var(--text)] hover:bg-[var(--hover)]"
-                to="/ubicaciones"
-              >
-                Ubicaciones
-              </Link>
-              <Link
-                className="rounded-xl px-3 py-2 text-sm text-[var(--text)] hover:bg-[var(--hover)]"
-                to="/testimonios"
-              >
-                Testimonios
-              </Link>
 
               <button
                 onClick={toggleTheme}
@@ -242,6 +266,27 @@ export default function Header({ onOpenSearch }: { onOpenSearch: () => void }) {
                     Ver todo
                   </Link>
                   {blogCategories.map((c) => (
+                    <Link
+                      key={c.href}
+                      className="rounded-xl px-3 py-2 text-sm text-[var(--muted)] hover:bg-[var(--hover)] hover:text-[var(--text)]"
+                      to={c.href}
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+
+              <button
+                onClick={() => setMoreOpen((v) => !v)}
+                className="flex items-center justify-between rounded-xl px-3 py-2 text-left text-sm text-[var(--text)] hover:bg-[var(--hover)]"
+              >
+                <span>Ver más</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {moreOpen ? (
+                <div className="grid gap-1 pl-2">
+                  {moreLinks.map((c) => (
                     <Link
                       key={c.href}
                       className="rounded-xl px-3 py-2 text-sm text-[var(--muted)] hover:bg-[var(--hover)] hover:text-[var(--text)]"
