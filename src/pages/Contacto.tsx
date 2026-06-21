@@ -21,20 +21,39 @@ const initial: FormState = {
   mensaje: '',
 }
 
+const FORMSPREE_ACTION = 'https://formspree.io/f/mlgyrklp'
+
 export default function Contacto() {
   const [form, setForm] = useState<FormState>(initial)
-  const [status, setStatus] = useState<'idle' | 'sent'>(
-    'idle',
-  )
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }))
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('sent')
-    setForm(initial)
+    setStatus('sending')
+
+    try {
+      const fd = new FormData(e.currentTarget)
+
+      const res = await fetch(FORMSPREE_ACTION, {
+        method: 'POST',
+        body: fd,
+        headers: { Accept: 'application/json' },
+      })
+
+      if (!res.ok) {
+        setStatus('error')
+        return
+      }
+
+      setStatus('sent')
+      setForm(initial)
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -64,13 +83,19 @@ export default function Contacto() {
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
           <div className="font-serif text-xl font-semibold">Formulario</div>
-          <form onSubmit={onSubmit} className="mt-5 grid gap-4">
+          <form
+            onSubmit={onSubmit}
+            action={FORMSPREE_ACTION}
+            method="POST"
+            className="mt-5 grid gap-4"
+          >
             <div className="grid gap-2">
               <label className="text-sm font-medium" htmlFor="nombre">
                 Nombre
               </label>
               <input
                 id="nombre"
+                name="nombre"
                 value={form.nombre}
                 onChange={(e) => update('nombre', e.target.value)}
                 className="rounded-xl border border-[var(--border)] bg-[var(--surface-solid)] px-3 py-2 text-sm text-[var(--text)] outline-none placeholder:text-[var(--muted-2)] focus:border-[var(--accent)]/40 focus:ring-2 focus:ring-[color:var(--accent)]/20"
@@ -85,6 +110,7 @@ export default function Contacto() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   value={form.email}
                   onChange={(e) => update('email', e.target.value)}
@@ -99,6 +125,7 @@ export default function Contacto() {
                 </label>
                 <input
                   id="telefono"
+                  name="telefono"
                   value={form.telefono}
                   onChange={(e) => update('telefono', e.target.value)}
                   className="rounded-xl border border-[var(--border)] bg-[var(--surface-solid)] px-3 py-2 text-sm text-[var(--text)] outline-none placeholder:text-[var(--muted-2)] focus:border-[var(--accent)]/40 focus:ring-2 focus:ring-[color:var(--accent)]/20"
@@ -113,6 +140,7 @@ export default function Contacto() {
                 </label>
                 <input
                   id="fecha"
+                  name="fecha"
                   type="date"
                   value={form.fecha}
                   onChange={(e) => update('fecha', e.target.value)}
@@ -126,6 +154,7 @@ export default function Contacto() {
                 </label>
                 <input
                   id="ubicacion"
+                  name="ubicacion"
                   value={form.ubicacion}
                   onChange={(e) => update('ubicacion', e.target.value)}
                   className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-solid)] px-3 py-2 text-sm text-[var(--text)] outline-none placeholder:text-[var(--muted-2)] focus:border-[var(--accent)]/40 focus:ring-2 focus:ring-[color:var(--accent)]/20"
@@ -141,6 +170,7 @@ export default function Contacto() {
               </label>
               <textarea
                 id="mensaje"
+                name="mensaje"
                 value={form.mensaje}
                 onChange={(e) => update('mensaje', e.target.value)}
                 className="w-full min-h-[120px] rounded-xl border border-[var(--border)] bg-[var(--surface-solid)] px-3 py-2 text-sm text-[var(--text)] outline-none placeholder:text-[var(--muted-2)] focus:border-[var(--accent)]/40 focus:ring-2 focus:ring-[color:var(--accent)]/20"
@@ -150,10 +180,17 @@ export default function Contacto() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button type="submit">Enviar solicitud</Button>
+              <Button type="submit">
+                {status === 'sending' ? 'Enviando…' : 'Enviar solicitud'}
+              </Button>
               {status === 'sent' ? (
                 <div className="text-sm text-[var(--muted)]">
-                  ¡Gracias! Tu solicitud se guardó como placeholder.
+                  ¡Gracias! Tu solicitud fue enviada.
+                </div>
+              ) : null}
+              {status === 'error' ? (
+                <div className="text-sm text-[var(--muted)]">
+                  No se pudo enviar. Intenta de nuevo en unos minutos.
                 </div>
               ) : null}
             </div>
