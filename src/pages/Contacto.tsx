@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import Seo from '@/components/seo/Seo'
 import PageHeader from '@/components/ui/PageHeader'
 import Button from '@/components/ui/Button'
+import WhatsAppLogo from '@/components/icons/WhatsAppLogo'
 
 type FormState = {
   nombre: string
@@ -22,6 +23,13 @@ const initial: FormState = {
 }
 
 const FORMSPREE_ACTION = 'https://formspree.io/f/mlgyrklp'
+
+const whatsappContacts = [
+  { name: 'Nicole', display: '+506 7010 2555', wa: '50670102555' },
+  { name: 'Angela', display: '+506 8957 5425', wa: '50689575425' },
+  { name: 'Avril', display: '+506 7022 7417', wa: '50670227417' },
+  { name: 'Kamila', display: '+506 7158 5220', wa: '50671585220' },
+] as const
 
 export default function Contacto() {
   const [form, setForm] = useState<FormState>(initial)
@@ -228,9 +236,27 @@ export default function Contacto() {
           </div>
 
           <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 md:p-8">
-            <div className="font-serif text-xl font-semibold">Requisitos (placeholder)</div>
+            <div className="font-serif text-xl font-semibold">Contactos directos</div>
             <div className="mt-3 text-sm leading-6 text-[var(--muted)]">
-              Este bloque se reemplazará con un rider técnico y necesidades específicas (espacio, sillas, tiempo de montaje, etc.).
+              Puedes escribirnos directamente por WhatsApp para cotizaciones y disponibilidad.
+            </div>
+
+            <div className="mt-4 grid gap-2">
+              {whatsappContacts.map((c) => (
+                <a
+                  key={c.wa}
+                  href={`https://wa.me/${c.wa}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface-solid)] px-4 py-3 transition hover:bg-[var(--hover)]"
+                >
+                  <div className="min-w-0">
+                    <div className="text-sm font-medium text-[var(--text)]">{c.name}</div>
+                    <div className="text-sm text-[var(--muted)]">{c.display}</div>
+                  </div>
+                  <WhatsAppLogo className="h-5 w-5 shrink-0 text-[var(--accent)]" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
