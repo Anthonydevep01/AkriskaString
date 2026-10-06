@@ -4,20 +4,14 @@ import PageHeader from '@/components/ui/PageHeader'
 
 const musicians = [
   {
-    name: 'Kamila Al Jamal Chaves',
-    instrument: 'Violín I',
-    bio: 'Violinista desde hace 12 años, la música y el arte forman parte de mi vida. Además de tocar, también aprecio distintas formas de expresión artística. Participo en proyectos musicales y artísticos porque creo que el arte es una manera de conectar con las personas, transmitir emociones y crear un impacto positivo en la comunidad.',
-    image: '/media/images/Akriska%20String%20Kamila%20Al%20Jamal%20Chaves.jpg',
-  },
-  {
     name: 'Nicole Pacheco',
-    instrument: 'Violín II',
+    instrument: 'Violín I',
     bio: 'Violinista desde los 5 años. Desde muy pequeña siempre ha tenido un gran gusto por la música contemporánea y su interpretación. Asimismo, le gusta transmitir mensajes y expresarse por medio de su instrumento en cada pieza que interpreta.',
     image: '/media/images/Akriska%20String%20Nicole%20Pacheco.jpg',
   },
   {
     name: 'Cristel Brenes',
-    instrument: 'Violín III',
+    instrument: 'Violín II',
     bio: 'Violinista desde los 5 años de edad. Desde pequeña encontró en el violín una forma de expresarse y desarrollar su pasión por la música a través de la práctica y la disciplina. Junto a sus compañeras continúa creciendo y compartiendo su amor por el arte.',
     image: '/media/images/Akriska%20String%20Cristel%20Brenes.jpeg',
   },

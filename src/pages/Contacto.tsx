@@ -28,7 +28,6 @@ const whatsappContacts = [
   { name: 'Nicole', display: '+506 7010 2555', wa: '50670102555' },
   { name: 'Angela', display: '+506 8957 5425', wa: '50689575425' },
   { name: 'Avril', display: '+506 7022 7417', wa: '50670227417' },
-  { name: 'Kamila', display: '+506 7158 5220', wa: '50671585220' },
 ] as const
 
 export default function Contacto() {
